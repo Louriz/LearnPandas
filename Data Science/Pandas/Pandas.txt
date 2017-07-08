@@ -1,0 +1,35 @@
+
+1. ufo=pd.read_csv('http://bit.ly/uforeport')
+====> loc :
+ufo.head(3) # to read just the three first rows
+loc: filtring rows and selecting colomuns by label , which mean label= index for rows and label=namecolomns for colomns.
++ufo.loc[  what rows we want  , what colomns we want  ]
+ufo.loc[0, :  ]  #  all colomns and the rows with label 0
+ufo.loc[[0,1,2], :]  all colomns , rows 0 1 2
+or : ufo.loc[ 0:2, :]    !!!! loc is inclusif  ( 2 is gotten)
+
++ selecting over colomun
+ufo.loc[:,'city', 'state']
+ufo.loc[:, 'city': 'state']  city throught state
+ufo[ufo.City=='Oakland']  # selecting all the dataframe where the namecolomnsCity==Oakland
+the same result with:   ufo.loc[ufo.City=='Okland', :]   all the row ( we can choose for rows just : State
+
+====> iloc: for selecting rows and filtring colomnc by integer position , it is exclusive for the last index
+ufo.iloc[:,[0,3]]     all rows,  and colonne 0 et 3
+ufo.columns   ==> show the columns name
+ufo.iloc[:,  0:4]   ==> 4 n'est pas inclus
+ufo.iloc[0:3, :]  from the row 0 to 2, all columns
+===> it allows to mix labels and integers
+drinks.ix['Albania', 0]  ===> give  :89
+or : drinks.ix[1, 'beer_seerving']===>89
+drikn.ix['Alab': 'hdhd', 0:2]    2 exlue
+ufo.ix[0:2, 0:2] ===>   3 lignes   2 colone  en effet puisque les lignes sont deja des entier donc ix se compre comme loc , et puisque les colonnes sont dees string ix se comporte comme iloc
+===><<<<<<< selecting :
+movies[movies.duration>= 200]
+movies[(movies.duration>=200) & (movies.genre=='genre')]
+
+
+
+
+
+
